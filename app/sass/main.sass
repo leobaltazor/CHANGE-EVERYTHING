@@ -1,6 +1,17 @@
 @import "vars"
 @import "fonts"
 @import "libs"
+@import '../libs/bootstrap/scss/bootstrap.scss'
+
+@function trim-unit($value) 
+    @return $value / ($value * 0 + 1);
+
+@function rem-calc($value) 
+    @return $value / trim-unit($base-font-size) * 1rem;
+
+@function em-calc($value) 
+    @return $value / trim-unit($base-font-size) * 1em;
+
 
 ::placeholder
 	color: #666
@@ -9,14 +20,15 @@
 	background-color: $accent
 	color: #fff
 
-body
-	font-size: 16px
+body, html
+	font-size: $base-font-size
 	min-width: 320px
 	position: relative
-	line-height: 1.65
+	line-height: 1.5
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
+	background-color: #f5f6f8
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -24,6 +36,12 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+	+media-breakpoint-down(md)
+        font-size: $base-font-size * 0.875
+	+media-breakpoint-down(sm)
+        font-size: $base-font-size * 0.8
+	+media-breakpoint-down(xs)
+        font-size: $base-font-size * 0.75
 
 .img-responsive
 	display: block
@@ -38,6 +56,80 @@ body
 b, strong
 	font-weight: bold
 
+.new
+	&:after
+		content: 'new'
+		text-transform: uppercase
+		border-radius: 2em
+		padding: 0.9em 1.1em
+		color: #ffffff
+		font-size: 0.715em
+		font-weight: 300
+		background-color: $accent
+		vertical-align: middle
+.btn
+	background-color: $accent
+	min-width: 180px
+	font-size: 12px
+	font-weight: 300
+	text-align: center
+	border-radius: 2em
+	text-decoration: none
+	color: #111111
+	padding: 1em 0
+	transition: all 2s ease, color 0.5s ease
+	a
+		&:hover
+			text-decoration: none
+	&:hover
+		background: $accent
 
+.header
+	background-image: url('/img/bg-header.png')
+	background-position: center bottom
+	background-repeat: no-repeat
+	background-size: cover
+	min:
+		height: rem-calc(800)
+	padding:
+		top: 47px
+	ul
+		list-style: none
+		display: flex
+		justify-content: space-between
+		padding-left: 0
+		margin-bottom: 0
+		flex-wrap: wrap
+		li
+			a
+				padding: 17px
+				text-transform: uppercase
+				color: #232323
+				color: inherit
+				opacity: 0.5
+				display: block
+				transition: 0.3s
+				text-decoration: none
+				margin-left: 10px
+				&.active
+					opacity: 1
+				&:hover
+					opacity: 1
+					color: #ffffff
+					background-color: #000
+					border-radius: 2px
+	&__logo
+		color: #232323
+		fill: #232323
+
+	&__title
+		text-transform: uppercase
+		font-size: em-calc(72)
+		line-height: 1.2
+		font-weight: 100
+		padding:
+			top: rem-calc(100)
+	&__subtitle
+		font-weight: 300
 
 @import "media" // Always at the end
