@@ -132,4 +132,49 @@ b, strong
 	&__subtitle
 		font-weight: 300
 
+.futures
+	padding-bottom: rem-calc(125)
+	.badge
+		background-color: $accent
+	&__text
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		height: 100%
+	&__item
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		max-width: 270px
+		position: relative
+		height: 100%
+		padding: 
+			top: 30px
+		&-img
+			margin-bottom: 32px
+		&-title
+			font-size: rem-calc(14)
+			margin-bottom: 32px
+			text-transform: uppercase
+		&-description
+			opacity: 0.5
+			padding-bottom: 40px
+		&-btn
+			@extend .btn
+			text-transform: uppercase
+			position: absolute
+			bottom: -1em
+			left: 50%
+			transform: translateX(-50%)
+			padding: 1em 0
+			background-color: #f5f6f8
+			font-size: inherit
+			transition: all 2s ease, color 0.5s ease
+			font-weight: inherit
+			a
+				color: inherit
+			&:hover
+				@extend .btn
+
+
 @import "media" // Always at the end
