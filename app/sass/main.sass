@@ -175,6 +175,56 @@ b, strong
 				color: inherit
 			&:hover
 				@extend .btn
+.gallery
+	$gal-p-top: 118px
+	padding: 
+		top: $gal-p-top
+		bottom: rem-calc(108)
+	background: 
+		color: $accent
+		image: url('/img/iphone.png')
+		repeat: no-repeat
+		position:
+			y: $gal-p-top - 30px
+			x: calc(50% - 200px)
+	&__gallery
+		height: 100%
+		+media-breakpoint-down(md)
+			height: 500px
+	&__description
+		position: relative
+		left: 72px
+		max-width: 385px
+		background-color: #fff
+		+media-breakpoint-down(md)
+			left: auto
+			margin: 0 auto
+	&__text
+		padding: 40px
+			bottom: 0
+		&-item
+			position: relative
+			padding-left: 64+23px
+			margin-bottom: rem-calc(55)
+		&-img
+			img
+				position: static
+			width: 64px
+			height: 64px
+			object-fit: cover
+			position: absolute
+			top: -15px
+			left: 0
+		&-title
+			margin-bottom: 23px
+		&-description
+			font-size: 14px
+			opacity: 0.5
+		&-btn 
+			background-color: #000000
+			&--link
+				color: #fffefe
+				font-size: 14px
 
 
 @import "media" // Always at the end
