@@ -355,5 +355,58 @@ b, strong
 		font-size: 0.75rem;
 		font-weight: 300
 
+.do-it
+	padding: 50px 0
+		bottom: 100px
+	&__title
+		font-size: 1.625rem
+		font-weight: 900
+		margin-bottom: 36px
+	&__wrapper
+	&__img
+		position: relative
+		margin-bottom: rem-calc(44)
+		&:first-of-type
+			top: -40px
+		&:last-of-type
+			bottom: -40px
+		&:hover
+			& div
+				opacity: 1
+	&__btn
+		transition: 0.3s ease
+		opacity: 0
+		a
+			@extend .btn
+			position: absolute
+			top: 50%
+			left: 50%
+			padding: em-calc(17)
+			min-width: auto
+			font-size: 0.75rem;
+			transform: translate(-50%, -50%)
+			border-radius: 2px
+			font-weight: 300
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			margin-left: 15px
+			width: calc(100% - 30px)
+			height: 100%
+			background-color: rgba(0,0,0,0.7)
+	.position-absolute
+		top: 50%
+		width: 174px
+		&--left
+			left: -200px
+		&--right
+			right: -200px
+			transform: translateY(-100%)
+
+
+
+
 
 @import "media" // Always at the end
