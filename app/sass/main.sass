@@ -412,5 +412,94 @@ b, strong
 	background: 
 		color: #ffffff
 
+.price
+	padding:
+		top: 78px
+		bottom: 50px
+	&__item
+		display: flex
+		flex-direction: column
+		height: 100%
+		padding: 42px
+		border-radius: 2px;
+		transition: 0.3s ease
+		&::before
+			background: 
+				color: #000000
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin-left: 15px
+			width: calc(100% - 30px);
+			height: 100%;
+			z-index: 0;
+			transition: all 0.3s;
+			opacity: 0
+			transform: scale(0.5,0.5);
+		&::after
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			opacity: 0;
+			transition: all 0.3s;
+			border: 1px solid rgba(255,255,255,0.9);
+			transform: scale(0.1,0.1);
+		&:hover
+			color: white
+			&::before
+				opacity: 1;
+				transform: scale(1,1);
+			&::after
+				opacity: 1;
+				transform: scale(1,1);
+	&__title
+		font-size: 0.75rem;
+		margin-bottom: rem-calc(43)
+		position: relative
+	&__price
+		font-size: 3.125rem
+		font-weight: 900
+		margin-bottom: rem-calc(37)
+		position: relative
+	&__description
+		margin-bottom: rem-calc(25)
+		font-size: 0.875rem;
+		opacity: 0.5
+	&__btn
+		position: relative
+		z-index: 5
+		text-align: center;
+		margin-right: auto;
+		margin-left: auto;
+		width: 60%;
+		cursor: pointer;
+		margin: 0 auto
+		margin-top: auto
+		@extend .btn
+		transition: all 0.5s;
+		position: relative;
+		&::after
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			opacity: 0;
+			border-radius: 2em
+			transition: all 0.3s;
+			border: 1px solid $accent;
+			transform: scale(1.2,1.2);
+		&:hover
+			&::after
+				opacity: 1;
+				transform: scale(1,1);
+		
 
 @import "media" // Always at the end
