@@ -442,13 +442,15 @@ b, strong
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 100%;
-			height: 100%;
+			margin-top: 5px
+			margin-left: 20px
+			width: calc(100% - 40px);
+			height: calc(100% - 10px;
 			z-index: 1;
 			opacity: 0;
 			transition: all 0.3s;
 			border: 1px solid rgba(255,255,255,0.9);
-			transform: scale(0.1,0.1);
+			transform: scale(0.1,0.1) cubic-bezier(1,.57,.53,1.52);
 		&:hover
 			color: white
 			&::before
@@ -467,6 +469,8 @@ b, strong
 		margin-bottom: rem-calc(37)
 		position: relative
 	&__description
+		max-width: 223px
+		margin: 0 auto
 		margin-bottom: rem-calc(25)
 		font-size: 0.875rem;
 		opacity: 0.5
