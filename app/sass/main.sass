@@ -1,7 +1,6 @@
 @import "vars"
 @import "fonts"
 @import "libs"
-@import '../libs/bootstrap/scss/bootstrap.scss'
 
 @function trim-unit($value) 
     @return $value / ($value * 0 + 1);
@@ -77,8 +76,9 @@ b, strong
 	text-decoration: none
 	color: #111111
 	padding: 1em 0
-	transition: all 2s ease, color 0.5s ease
+	transition: all 1s ease, color 0.5s ease
 	a
+		color: inherit
 		&:hover
 			text-decoration: none
 	&:hover
@@ -169,7 +169,7 @@ b, strong
 			padding: 1em 0
 			background-color: #f5f6f8
 			font-size: inherit
-			transition: all 2s ease, color 0.5s ease
+			transition: all 1s ease, color 0.5s ease
 			font-weight: inherit
 			a
 				color: inherit
@@ -225,6 +225,11 @@ b, strong
 			&--link
 				color: #fffefe
 				font-size: 14px
+				transition: 1s ease
+			&:hover
+				a
+					color: $accent 
+					text-decoration: none
 
 .build
 	background-color: #fff
@@ -257,5 +262,98 @@ b, strong
 			text-decoration: none
 			color: inherit
 			font-size: 0.75rem;
+
+.ipadblock
+	position: relative
+	padding-bottom: 200px
+	&__container
+		max-width: 1370px
+		margin: 0 auto
+		padding: 8.125rem
+		background: 
+			color: #000000
+	&__text
+		max-width: 50%
+	&__title
+		color:  rgba(255, 255, 255, 1)
+		font-size: 4.5rem
+		line-height: 1.1
+		font-weight: 100
+		margin-bottom: rem-calc(50)
+	&__description
+		margin-bottom: rem-calc(164)
+		color:  rgba(255, 255, 255, 0.5)
+		font-size: 0.875rem;
+		font-weight: 300;
+	&__ipad
+		height: 700px
+		background: 
+			image: url('/img/iPad.png')
+			repeat: no-repeat
+		position: absolute
+		z-index: 1000000
+		right: 0
+		bottom: 0
+		width: 815px
+
+.platform
+	&__title
+		margin-bottom: rem-calc(41)
+	&__subtitle
+		margin-bottom: rem-calc(79)
+	&__item
+		padding-left: 19px+60px+15px
+		&s
+		&-img
+			img
+				position: static
+			position: absolute
+			left: 15px
+			top: 0
+		&-title
+			margin-bottom: em-calc(19)
+		&-description
+			opacity: 0.5
+
+.slide-text
+	padding: 50px 0
+	&__wrapper
+		display: flex
+	&__item
+		display: flex
+		flex-direction: column
+		justify-content: center
+		border-radius: 2px
+		background-color:  #ffffff
+		width: 795px
+		margin: 0 25px
+		text-align: center
+		padding: 85px 110px
+		line-height: 1.1
+		position: relative
+		min-height: 485px
+		&::after, &::before
+			content: ',,'
+			position: absolute
+			font-size: 50px
+			line-height: 0
+			font-weight: bold
+			opacity: 0.2
+			transform-origin: center center
+		&::after
+			right: 42px
+			bottom: 25px +46px
+		&::before
+			left: 40px
+			top: 25px + 41px
+			transform: rotate(180deg)
+	&__text
+		font-weight: 100
+		font-size: 2.625rem
+		margin-bottom: 26px
+	&__autor
+		font-size: 0.75rem;
+		font-weight: 300
+
 
 @import "media" // Always at the end

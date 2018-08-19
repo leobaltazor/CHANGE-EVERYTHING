@@ -1,5 +1,9 @@
 $(function() {
-
-	// Custom JS
-
+    // Custom JS
+    $(".slide-text__wrapper").slick({
+        centerMode: true,
+        centerPadding: "0px",
+        slidesToShow: 1,
+        variableWidth: true
+    });
 });
