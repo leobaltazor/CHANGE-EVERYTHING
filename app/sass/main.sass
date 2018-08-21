@@ -13,497 +13,550 @@
 
 
 ::placeholder
-	color: #666
+    color: #666
 
 ::selection
-	background-color: $accent
-	color: #fff
+    background-color: $accent
+    color: #fff
 
 body, html
-	font-size: $base-font-size
-	min-width: 320px
-	position: relative
-	line-height: 1.5
-	font-family: $default-font
-	overflow-x: hidden
-	color: $text
-	background-color: #f5f6f8
-	input, textarea
-		border: #666 1px solid
-		outline: none
-		&:focus:required:invalid
-			border-color: red
-		&:required:valid
-			border-color: green
-	+media-breakpoint-down(md)
+    font-size: $base-font-size
+    min-width: 320px
+    position: relative
+    line-height: 1.5
+    font-family: $default-font
+    overflow-x: hidden
+    color: $text
+    background-color: #f5f6f8
+    input, textarea
+        border: #666 1px solid
+        outline: none
+        &:focus:required:invalid
+            border-color: red
+        &:required:valid
+            border-color: green
+    +media-breakpoint-down(md)
         font-size: $base-font-size * 0.875
-	+media-breakpoint-down(sm)
+    +media-breakpoint-down(sm)
         font-size: $base-font-size * 0.8
-	+media-breakpoint-down(xs)
+    +media-breakpoint-down(xs)
         font-size: $base-font-size * 0.75
 
 .img-responsive
-	display: block
-	max-width: 100%
-	height: auto
-	&.img-width
-		width: 100%
+    display: block
+    max-width: 100%
+    height: auto
+    &.img-width
+        width: 100%
 
 .text-center
-	text-align: center
+    text-align: center
 
 b, strong
-	font-weight: bold
+    font-weight: bold
 
 .new
-	&:after
-		content: 'new'
-		text-transform: uppercase
-		border-radius: 2em
-		padding: 0.9em 1.1em
-		color: #ffffff
-		font-size: 0.715em
-		font-weight: 300
-		background-color: $accent
-		vertical-align: middle
+    &:after
+        content: 'new'
+        text-transform: uppercase
+        border-radius: 2em
+        padding: 0.9em 1.1em
+        color: #ffffff
+        font-size: 0.715em
+        font-weight: 300
+        background-color: $accent
+        vertical-align: middle
 .btn
-	background-color: $accent
-	min-width: 180px
-	font-size: 12px
-	font-weight: 300
-	text-align: center
-	border-radius: 2em
-	text-decoration: none
-	color: #111111
-	padding: 1em 0
-	transition: all 1s ease, color 0.5s ease
-	a
-		color: inherit
-		&:hover
-			text-decoration: none
-	&:hover
-		background: $accent
+    background-color: $accent
+    min-width: 180px
+    font-size: 12px
+    font-weight: 300
+    text-align: center
+    border-radius: 2em
+    text-decoration: none
+    color: #111111
+    padding: 1em 0
+    transition: all 1s ease, color 0.5s ease
+    a
+        color: inherit
+        &:hover
+            text-decoration: none
+    &:hover
+        background: $accent
 
 .header
-	background-image: url('/img/bg-header.png')
-	background-position: center bottom
-	background-repeat: no-repeat
-	background-size: cover
-	min:
-		height: rem-calc(800)
-	padding:
-		top: 47px
-	ul
-		list-style: none
-		display: flex
-		justify-content: space-between
-		padding-left: 0
-		margin-bottom: 0
-		flex-wrap: wrap
-		li
-			a
-				padding: 17px
-				text-transform: uppercase
-				color: #232323
-				color: inherit
-				opacity: 0.5
-				display: block
-				transition: 0.3s
-				text-decoration: none
-				margin-left: 10px
-				&.active
-					opacity: 1
-				&:hover
-					opacity: 1
-					color: #ffffff
-					background-color: #000
-					border-radius: 2px
-	&__logo
-		color: #232323
-		fill: #232323
+    background-image: url('/img/bg-header.png')
+    background-position: center bottom
+    background-repeat: no-repeat
+    background-size: cover
+    min:
+        height: rem-calc(800)
+    padding:
+        top: 47px
+    ul
+        list-style: none
+        display: flex
+        justify-content: space-between
+        padding-left: 0
+        margin-bottom: 0
+        flex-wrap: wrap
+        li
+            a
+                padding: 17px
+                text-transform: uppercase
+                color: #232323
+                color: inherit
+                opacity: 0.5
+                display: block
+                transition: 0.3s
+                text-decoration: none
+                margin-left: 10px
+                &.active
+                    opacity: 1
+                &:hover
+                    opacity: 1
+                    color: #ffffff
+                    background-color: #000
+                    border-radius: 2px
+    &__logo
+        color: #232323
+        fill: #232323
 
-	&__title
-		text-transform: uppercase
-		font-size: em-calc(72)
-		line-height: 1.2
-		font-weight: 100
-		padding:
-			top: rem-calc(100)
-	&__subtitle
-		font-weight: 300
+    &__title
+        text-transform: uppercase
+        font-size: em-calc(72)
+        line-height: 1.2
+        font-weight: 100
+        padding:
+            top: rem-calc(100)
+    &__subtitle
+        font-weight: 300
 
 .futures
-	padding-bottom: rem-calc(125)
-	.badge
-		background-color: $accent
-	&__text
-		display: flex
-		flex-direction: column
-		justify-content: space-between
-		height: 100%
-	&__item
-		display: flex
-		flex-direction: column
-		justify-content: space-between
-		max-width: 270px
-		position: relative
-		height: 100%
-		padding: 
-			top: 30px
-		&-img
-			margin-bottom: 32px
-		&-title
-			font-size: rem-calc(14)
-			margin-bottom: 32px
-			text-transform: uppercase
-		&-description
-			opacity: 0.5
-			padding-bottom: 40px
-		&-btn
-			@extend .btn
-			text-transform: uppercase
-			position: absolute
-			bottom: -1em
-			left: 50%
-			transform: translateX(-50%)
-			padding: 1em 0
-			background-color: #f5f6f8
-			font-size: inherit
-			transition: all 1s ease, color 0.5s ease
-			font-weight: inherit
-			a
-				color: inherit
-			&:hover
-				@extend .btn
+    padding-bottom: rem-calc(125)
+    .badge
+        background-color: $accent
+    &__text
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 100%
+    &__item
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        max-width: 270px
+        position: relative
+        height: 100%
+        padding: 
+            top: 30px
+        &-img
+            margin-bottom: 32px
+        &-title
+            font-size: rem-calc(14)
+            margin-bottom: 32px
+            text-transform: uppercase
+        &-description
+            opacity: 0.5
+            padding-bottom: 40px
+        &-btn
+            @extend .btn
+            text-transform: uppercase
+            position: absolute
+            bottom: -1em
+            left: 50%
+            transform: translateX(-50%)
+            padding: 1em 0
+            background-color: #f5f6f8
+            font-size: inherit
+            transition: all 1s ease, color 0.5s ease
+            font-weight: inherit
+            a
+                color: inherit
+            &:hover
+                @extend .btn
 .gallery
-	$gal-p-top: 118px
-	padding: 
-		top: $gal-p-top
-		bottom: rem-calc(108)
-	background: 
-		color: $accent
-		image: url('/img/iphone.png')
-		repeat: no-repeat
-		position:
-			y: $gal-p-top - 30px
-			x: calc(50% - 200px)
-	&__gallery
-		height: 100%
-		+media-breakpoint-down(md)
-			height: 500px
-	&__description
-		position: relative
-		left: 72px
-		max-width: 385px
-		background-color: #fff
-		+media-breakpoint-down(md)
-			left: auto
-			margin: 0 auto
-	&__text
-		padding: 40px
-			bottom: 0
-		&-item
-			position: relative
-			padding-left: 64+23px
-			margin-bottom: rem-calc(55)
-		&-img
-			img
-				position: static
-			width: 64px
-			height: 64px
-			object-fit: cover
-			position: absolute
-			top: -15px
-			left: 0
-		&-title
-			margin-bottom: 23px
-		&-description
-			font-size: 14px
-			opacity: 0.5
-		&-btn 
-			background-color: #000000
-			&--link
-				color: #fffefe
-				font-size: 14px
-				transition: 1s ease
-			&:hover
-				a
-					color: $accent 
-					text-decoration: none
+    $gal-p-top: 118px
+    padding: 
+        top: $gal-p-top
+        bottom: rem-calc(108)
+    background: 
+        color: $accent
+        image: url('/img/iphone.png')
+        repeat: no-repeat
+        position:
+            y: $gal-p-top - 30px
+            x: calc(50% - 200px)
+    &__gallery
+        height: 100%
+        +media-breakpoint-down(md)
+            height: 500px
+    &__description
+        position: relative
+        left: 72px
+        max-width: 385px
+        background-color: #fff
+        +media-breakpoint-down(md)
+            left: auto
+            margin: 0 auto
+    &__text
+        padding: 40px
+            bottom: 0
+        &-item
+            position: relative
+            padding-left: 64+23px
+            margin-bottom: rem-calc(55)
+        &-img
+            img
+                position: static
+            width: 64px
+            height: 64px
+            object-fit: cover
+            position: absolute
+            top: -15px
+            left: 0
+        &-title
+            margin-bottom: 23px
+        &-description
+            font-size: 14px
+            opacity: 0.5
+        &-btn 
+            background-color: #000000
+            &--link
+                color: #fffefe
+                font-size: 14px
+                transition: 1s ease
+            &:hover
+                a
+                    color: $accent 
+                    text-decoration: none
 
 .build
-	background-color: #fff
-	padding: 
-		top: rem-calc(120)
-		bottom: rem-calc(108)
-	font-size: 1.125rem
-	&__title
-		font-weight: 100
-		font-size: 4.5rem
+    background-color: #fff
+    padding: 
+        top: rem-calc(120)
+        bottom: rem-calc(108)
+    font-size: 1.125rem
+    &__title
+        font-weight: 100
+        font-size: 4.5rem
 
 .futuressecond
-	padding: 
-		top: rem-calc(109)
-		bottom: rem-calc(102)
-	&__item
-		display: flex
-		flex-direction: column
-		justify-content: space-between
-		min-height: 100%
-		font-weight: 300
-	&__title
-		margin-bottom: 26px
-	&__description
-		margin-bottom: 28px
-		font-size: 0.875rem
-		opacity: 0.5
-	&__btn
-		a
-			text-decoration: none
-			color: inherit
-			font-size: 0.75rem;
+    padding: 
+        top: rem-calc(109)
+        bottom: rem-calc(102)
+    &__item
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        min-height: 100%
+        font-weight: 300
+    &__title
+        margin-bottom: 26px
+    &__description
+        margin-bottom: 28px
+        font-size: 0.875rem
+        opacity: 0.5
+    &__btn
+        a
+            text-decoration: none
+            color: inherit
+            font-size: 0.75rem;
 
 .ipadblock
-	position: relative
-	padding-bottom: 200px
-	&__container
-		max-width: 1370px
-		margin: 0 auto
-		padding: 8.125rem
-		background: 
-			color: #000000
-	&__text
-		max-width: 50%
-	&__title
-		color:  rgba(255, 255, 255, 1)
-		font-size: 4.5rem
-		line-height: 1.1
-		font-weight: 100
-		margin-bottom: rem-calc(50)
-	&__description
-		margin-bottom: rem-calc(164)
-		color:  rgba(255, 255, 255, 0.5)
-		font-size: 0.875rem;
-		font-weight: 300;
-	&__ipad
-		height: 700px
-		background: 
-			image: url('/img/iPad.png')
-			repeat: no-repeat
-		position: absolute
-		z-index: 1000000
-		right: 0
-		bottom: 0
-		width: 815px
+    position: relative
+    padding-bottom: 200px
+    &__container
+        max-width: 1370px
+        margin: 0 auto
+        padding: 8.125rem
+        background: 
+            color: #000000
+    &__text
+        max-width: 50%
+    &__title
+        color:  rgba(255, 255, 255, 1)
+        font-size: 4.5rem
+        line-height: 1.1
+        font-weight: 100
+        margin-bottom: rem-calc(50)
+    &__description
+        margin-bottom: rem-calc(164)
+        color:  rgba(255, 255, 255, 0.5)
+        font-size: 0.875rem;
+        font-weight: 300;
+    &__ipad
+        height: 700px
+        background: 
+            image: url('/img/iPad.png')
+            repeat: no-repeat
+        position: absolute
+        z-index: 1000000
+        right: 0
+        bottom: 0
+        width: 815px
 
 .platform
-	&__title
-		margin-bottom: rem-calc(41)
-	&__subtitle
-		margin-bottom: rem-calc(79)
-	&__item
-		padding-left: 19px+60px+15px
-		&s
-		&-img
-			img
-				position: static
-			position: absolute
-			left: 15px
-			top: 0
-		&-title
-			margin-bottom: em-calc(19)
-		&-description
-			opacity: 0.5
+    &__title
+        margin-bottom: rem-calc(41)
+    &__subtitle
+        margin-bottom: rem-calc(79)
+    &__item
+        padding-left: 19px+60px+15px
+        &s
+        &-img
+            img
+                position: static
+            position: absolute
+            left: 15px
+            top: 0
+        &-title
+            margin-bottom: em-calc(19)
+        &-description
+            opacity: 0.5
 
 .slide-text
-	padding: 50px 0
-	&__wrapper
-		display: flex
-	&__item
-		display: flex
-		flex-direction: column
-		justify-content: center
-		border-radius: 2px
-		background-color:  #ffffff
-		width: 795px
-		margin: 0 25px
-		text-align: center
-		padding: 85px 110px
-		line-height: 1.1
-		position: relative
-		min-height: 485px
-		&::after, &::before
-			content: ',,'
-			position: absolute
-			font-size: 50px
-			line-height: 0
-			font-weight: bold
-			opacity: 0.2
-			transform-origin: center center
-		&::after
-			right: 42px
-			bottom: 25px +46px
-		&::before
-			left: 40px
-			top: 25px + 41px
-			transform: rotate(180deg)
-	&__text
-		font-weight: 100
-		font-size: 2.625rem
-		margin-bottom: 26px
-	&__autor
-		font-size: 0.75rem;
-		font-weight: 300
+    padding: 50px 0
+    &__wrapper
+        display: flex
+    &__item
+        display: flex
+        flex-direction: column
+        justify-content: center
+        border-radius: 2px
+        background-color:  #ffffff
+        width: 795px
+        margin: 0 25px
+        text-align: center
+        padding: 85px 110px
+        line-height: 1.1
+        position: relative
+        min-height: 485px
+        &::after, &::before
+            content: ',,'
+            position: absolute
+            font-size: 50px
+            line-height: 0
+            font-weight: bold
+            opacity: 0.2
+            transform-origin: center center
+        &::after
+            right: 42px
+            bottom: 25px +46px
+        &::before
+            left: 40px
+            top: 25px + 41px
+            transform: rotate(180deg)
+    &__text
+        font-weight: 100
+        font-size: 2.625rem
+        margin-bottom: 26px
+    &__autor
+        font-size: 0.75rem;
+        font-weight: 300
 
 .do-it
-	padding: 50px 0
-		bottom: 100px
-	&__title
-		font-size: 1.625rem
-		font-weight: 900
-		margin-bottom: 36px
-	&__wrapper
-	&__img
-		position: relative
-		margin-bottom: rem-calc(44)
-		&:first-of-type
-			top: -40px
-		&:last-of-type
-			bottom: -40px
-		&:hover
-			& div
-				opacity: 1
-	&__btn
-		transition: 0.3s ease
-		opacity: 0
-		a
-			@extend .btn
-			position: absolute
-			top: 50%
-			left: 50%
-			padding: em-calc(17)
-			min-width: auto
-			font-size: 0.75rem;
-			transform: translate(-50%, -50%)
-			border-radius: 2px
-			font-weight: 300
-		&:before
-			content: ''
-			position: absolute
-			top: 0
-			left: 0
-			margin-left: 15px
-			width: calc(100% - 30px)
-			height: 100%
-			background-color: rgba(0,0,0,0.7)
-	.position-absolute
-		top: 50%
-		width: 174px
-		&--left
-			left: -200px
-		&--right
-			right: -200px
-			transform: translateY(-100%)
+    padding: 50px 0
+        bottom: 100px
+    &__title
+        font-size: 1.625rem
+        font-weight: 900
+        margin-bottom: 36px
+    &__wrapper
+    &__img
+        position: relative
+        margin-bottom: rem-calc(44)
+        &:first-of-type
+            top: -40px
+        &:last-of-type
+            bottom: -40px
+        &:hover
+            & div
+                opacity: 1
+    &__btn
+        transition: 0.3s ease
+        opacity: 0
+        a
+            @extend .btn
+            position: absolute
+            top: 50%
+            left: 50%
+            padding: em-calc(17)
+            min-width: auto
+            font-size: 0.75rem;
+            transform: translate(-50%, -50%)
+            border-radius: 2px
+            font-weight: 300
+        &:before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            margin-left: 15px
+            width: calc(100% - 30px)
+            height: 100%
+            background-color: rgba(0,0,0,0.7)
+    .position-absolute
+        top: 50%
+        width: 174px
+        &--left
+            left: -200px
+        &--right
+            right: -200px
+            transform: translateY(-100%)
 
 .join
-	font-size: 4.5rem
-	font-weight: 100
-	padding: rem-calc(92) 0
-	background: 
-		color: #ffffff
+    font-size: 4.5rem
+    font-weight: 100
+    padding: rem-calc(92) 0
+    background: 
+        color: #ffffff
 
 .price
-	padding:
-		top: 78px
-		bottom: 50px
-	&__item
-		display: flex
-		flex-direction: column
-		height: 100%
-		padding: 42px
-		border-radius: 2px;
-		transition: 0.3s ease
-		&::before
-			background: 
-				color: #000000
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			margin-left: 15px
-			width: calc(100% - 30px);
-			height: 100%;
-			z-index: 0;
-			transition: all 0.3s;
-			opacity: 0
-			transform: scale(0.5,0.5);
-		&::after
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			margin-top: 5px
-			margin-left: 20px
-			width: calc(100% - 40px);
-			height: calc(100% - 10px;
-			z-index: 1;
-			opacity: 0;
-			transition: all 0.3s;
-			border: 1px solid rgba(255,255,255,0.9);
-			transform: scale(0.1,0.1) cubic-bezier(1,.57,.53,1.52);
-		&:hover
-			color: white
-			&::before
-				opacity: 1;
-				transform: scale(1,1);
-			&::after
-				opacity: 1;
-				transform: scale(1,1);
-	&__title
-		font-size: 0.75rem;
-		margin-bottom: rem-calc(43)
-		position: relative
-	&__price
-		font-size: 3.125rem
-		font-weight: 900
-		margin-bottom: rem-calc(37)
-		position: relative
-	&__description
-		max-width: 223px
-		margin: 0 auto
-		margin-bottom: rem-calc(25)
-		font-size: 0.875rem;
-		opacity: 0.5
-	&__btn
-		position: relative
-		z-index: 5
-		text-align: center;
-		margin-right: auto;
-		margin-left: auto;
-		width: 60%;
-		cursor: pointer;
-		margin: 0 auto
-		margin-top: auto
-		@extend .btn
-		transition: all 0.5s;
-		position: relative;
-		&::after
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 1;
-			opacity: 0;
-			border-radius: 2em
-			transition: all 0.3s;
-			border: 1px solid $accent;
-			transform: scale(1.2,1.2);
-		&:hover
-			&::after
-				opacity: 1;
-				transform: scale(1,1);
-		
+    padding:
+        top: 78px
+        bottom: 50px
+    &__item
+        display: flex
+        flex-direction: column
+        height: 100%
+        padding: 42px
+        border-radius: 2px;
+        transition: 0.3s ease
+        &::before
+            background: 
+                color: #000000
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 15px
+            width: calc(100% - 30px);
+            height: 100%;
+            z-index: 0;
+            transition: all 0.3s;
+            opacity: 0
+            transform: scale(0.5,0.5);
+        &::after
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 5px
+            margin-left: 20px
+            width: calc(100% - 40px);
+            height: calc(100% - 10px;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.9);
+            transform: scale(0.1,0.1) cubic-bezier(1,.57,.53,1.52);
+        &:hover
+            color: white
+            &::before
+                opacity: 1;
+                transform: scale(1,1);
+            &::after
+                opacity: 1;
+                transform: scale(1,1);
+    &__title
+        font-size: 0.75rem;
+        margin-bottom: rem-calc(43)
+        position: relative
+    &__price
+        font-size: 3.125rem
+        font-weight: 900
+        margin-bottom: rem-calc(37)
+        position: relative
+    &__description
+        max-width: 223px
+        margin: 0 auto
+        margin-bottom: rem-calc(25)
+        font-size: 0.875rem;
+        opacity: 0.5
+    &__btn
+        position: relative
+        z-index: 5
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        width: 60%;
+        cursor: pointer;
+        margin: 0 auto
+        margin-top: auto
+        @extend .btn
+        transition: all 0.5s;
+        position: relative;
+        &::after
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            border-radius: 2em
+            transition: all 0.3s;
+            border: 1px solid $accent;
+            transform: scale(1.2,1.2);
+        &:hover
+            &::after
+                opacity: 1;
+                transform: scale(1,1);
+        
+.footer
+    position: relative
+    padding-bottom: rem-calc(128)
+    &__bg
+        position: absolute
+        top: 4rem
+        left: 0
+        height: 100%
+        width: 100%
+        background: 
+            image: url('/img/bg-footer.png')
+            size: cover
+            position:
+                x: center
+    &__title
+        z-index: -1
+        font-size: 5.626rem
+        font-weight: 900
+        text-transform: uppercase
+        text-align: right
+        margin-bottom: rem-calc(256)
+    &__content
+        background-color: #000000
+        padding: 50px
+        ul
+            list-style: none
+            padding-left: 0
+            li
+                font-weight: 300
+                font-size: 0.75rem
+                line-height: 3.3
+                
+                a
+                    color: #ffffff
+    &__craftwork
+        color: rgba(255,255,255,0.2)
+        display: flex
+        flex-direction: column
+        // justify-content: space-between
+        height: 100%
+        &-social
+            &-text
+                a
+                    color: rgba(255,255,255,0.2)
+            &-list
+                display: flex
+                justify-content: space-between
+                a
+                    opacity: 0.2
+                    transition: 0.5s ease
+                    &:hover
+                        opacity: 0.9
+
 
 @import "media" // Always at the end
