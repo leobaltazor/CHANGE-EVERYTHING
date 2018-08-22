@@ -182,12 +182,14 @@ b, strong
         bottom: rem-calc(108)
     background: 
         color: $accent
-        image: url('/img/iphone.png')
-        repeat: no-repeat
-        position:
-            y: $gal-p-top - 30px
-            x: calc(50% - 200px)
     &__gallery
+        background: 
+            image: url('/img/iphone.png')
+            repeat: no-repeat
+            size: containe
+            position:
+                // y: $gal-p-top - 30px
+                // x: calc(50% - 200px)
         height: 100%
         +media-breakpoint-down(md)
             height: 500px
@@ -200,8 +202,10 @@ b, strong
             left: auto
             margin: 0 auto
     &__text
-        padding: 40px
+        padding: rem-calc(40)
             bottom: 0
+        +media-breakpoint-down(xs)
+            padding: 25px 10px
         &-item
             position: relative
             padding-left: 64+23px
@@ -216,7 +220,7 @@ b, strong
             top: -15px
             left: 0
         &-title
-            margin-bottom: 23px
+            margin-bottom: rem-calc(23)
         &-description
             font-size: 14px
             opacity: 0.5
@@ -342,11 +346,12 @@ b, strong
                 left: 2.5rem
                 right: 2.5rem
         +media-breakpoint-down(sm)
-            max-width: 300px
+            max-width: 250px
+            margin: 0 5px
             padding: 
                 left: 2rem
                 right: 2rem
-            min-height: 311px
+            min-height: 340px
         +media-breakpoint-down(xs)
         &::after, &::before
             content: ',,'
