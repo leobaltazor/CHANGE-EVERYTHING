@@ -6,4 +6,7 @@ $(function() {
         slidesToShow: 1,
         variableWidth: true
     });
+    $('.gallery__gallery-slider').slick({
+
+    })
 });

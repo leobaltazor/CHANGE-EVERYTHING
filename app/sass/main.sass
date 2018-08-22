@@ -186,13 +186,29 @@ b, strong
         background: 
             image: url('/img/iphone.png')
             repeat: no-repeat
-            size: containe
+            size: cover
             position:
                 // y: $gal-p-top - 30px
                 // x: calc(50% - 200px)
-        height: 100%
+        // height: 100%
+        width: 100%
+        transform: translate(102px,1px);
+        overflow: hidden;
+        // perspective: 1000px
         +media-breakpoint-down(md)
             height: 500px
+        &-slider
+            // transform: perspective(1000px) rotateX(20deg) rotateZ(-36deg) rotateY(0deg) skewY(-3deg) translate(400px,300px)
+            // transform: perspective(1000px) rotateX(10deg) rotateZ(-40deg) rotateY(1deg) skewY(1deg) skewX(2deg)  translate(360px,300px)
+            // transform: perspective(1000px) rotateX(0deg) rotateZ(00deg) rotateY(0deg) skewY(0deg) skewX(0deg)  translate(500px,0px)
+            transform: perspective(1540px) rotateX(10deg) rotateZ(-45deg) rotateY(0deg) skewY(7deg) skewX(1.6deg) translate3d(390px,245px,-25px) scale(0.884,0.95);
+            transform-origin: left bottom;
+            width: 339px;
+            height: 631px;
+            img
+                max-width: 700px
+                max-height: 600px
+                object-fit: contain
     &__description
         position: relative
         left: 72px
