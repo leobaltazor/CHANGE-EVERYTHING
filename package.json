@@ -4,7 +4,10 @@
     "description": "OptimizedHTML 4 - Start HTML Template",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "gulp": "gulp",
+        "build": "gulp build",
+        "deploy": "gulp deploy"
     },
     "author": "WebDesign Master",
     "license": "ISC",
