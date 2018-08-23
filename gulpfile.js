@@ -1,20 +1,21 @@
 var syntax = "sass"; // Syntax: sass or scss;
 
-var gulp       = require("gulp"),
-  gutil        = require("gulp-util"),
-  sass         = require("gulp-sass"),
-  browserSync  = require("browser-sync"),
-  concat       = require("gulp-concat"),
-  uglify       = require("gulp-uglify"),
-  del          = require("del"),
-  cleancss     = require("gulp-clean-css"),
-  rename       = require("gulp-rename"),
-  autoprefixer = require("gulp-autoprefixer"),
-  notify       = require("gulp-notify"),
-  imagemin     = require("gulp-imagemin"),
-  pngquant     = require("imagemin-pngquant"),
-  cache        = require("gulp-cache"),
-  rsync        = require("gulp-rsync");
+var gulp = require("gulp"),
+    gutil = require("gulp-util"),
+    sass = require("gulp-sass"),
+    browserSync = require("browser-sync"),
+    concat = require("gulp-concat"),
+    uglify = require("gulp-uglify"),
+    del = require("del"),
+    cleancss = require("gulp-clean-css"),
+    rename = require("gulp-rename"),
+    autoprefixer = require("gulp-autoprefixer"),
+    notify = require("gulp-notify"),
+    imagemin = require("gulp-imagemin"),
+    pngquant = require("imagemin-pngquant"),
+    cache = require("gulp-cache"),
+    rsync = require("gulp-rsync"),
+    ftp = require("vinyl-ftp");
 
 gulp.task("browser-sync", function() {
     browserSync({
@@ -77,22 +78,22 @@ gulp.task("watch", ["styles", "js", "browser-sync"], function() {
     gulp.watch("app/*.html", browserSync.reload);
 });
 
-gulp.task("img", function () {
-	return gulp
-	  .src("app/img/**/*") // Берем все изображения из app
-	  .pipe(
-		cache(
-		  imagemin({
-			// Сжимаем их с наилучшими настройками с учетом кеширования
-			interlaced: true,
-			progressive: true,
-			svgoPlugins: [{ removeViewBox: false }],
-			use: [pngquant()]
-		  })
-		)
-	  )
-	  .pipe(gulp.dest("build/img")); // Выгружаем на продакшен
-  });
+gulp.task("img", function() {
+    return gulp
+        .src("app/img/**/*") // Берем все изображения из app
+        .pipe(
+            cache(
+                imagemin({
+                    // Сжимаем их с наилучшими настройками с учетом кеширования
+                    interlaced: true,
+                    progressive: true,
+                    svgoPlugins: [{ removeViewBox: false }],
+                    use: [pngquant()]
+                })
+            )
+        )
+        .pipe(gulp.dest("build/img")); // Выгружаем на продакшен
+});
 
 gulp.task(
     "build",
@@ -118,6 +119,19 @@ gulp.task("removedist", function() {
 });
 gulp.task("clearcache", function() {
     return cache.clearAll();
+});
+
+gulp.task("deploy", function() {
+    var conn = ftp.create({
+        host: "files.000webhost.com",
+        user: "leobaltazor2",
+        password: "ecDomHokghemEd6",
+        parallel: 10,
+        log: gutil.log
+    });
+
+    var globs = ["build/**"];
+    return gulp.src(globs, { buffer: false }).pipe(conn.dest("/public_html"));
 });
 
 gulp.task("default", ["watch"]);
