@@ -11,6 +11,13 @@
 @function em-calc($value) 
     @return $value / trim-unit($base-font-size) * 1em;
 
+.scroll-watch-in-view
+    opacity: 1
+
+section
+    * 
+        opacity: 0;
+        transition: opacity 0.3s;
 
 ::placeholder
     color: #666
@@ -338,6 +345,15 @@ b, strong
         padding-left: 87px + 42px
         padding-top: 44px
         padding-bottom: 110px
+        @media (min-width: 2500px)
+            left: 30vw
+        @media (max-width: 22499px)
+            left: 25vw
+        @media (max-width: 2200px)
+            left: 17vw
+        @media (max-width: 1600px)
+            left: 10vw
+        +media-breakpoint-up(xl)
         +media-breakpoint-down(sm)
             height: 450px
             width: 550px

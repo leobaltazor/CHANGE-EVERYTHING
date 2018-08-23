@@ -23,4 +23,9 @@ $(function() {
         $(".gallery").css("background-color", bg);
     });
     $(".ipadblock__ipad").slick({});
+
+    var sw = new ScrollWatch({
+        watchOnce: true,
+        watch: "*"
+    });
 });
