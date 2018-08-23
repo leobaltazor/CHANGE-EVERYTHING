@@ -125,8 +125,8 @@ gulp.task("deploy", function() {
     var conn = ftp.create({
         host: "files.000webhost.com",
         user: "leobaltazor2",
-        password: "ecDomHokghemEd6",
-        parallel: 10,
+        password: "GliubAsEviloci4",
+        parallel: 5,
         log: gutil.log
     });
 
