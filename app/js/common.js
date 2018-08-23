@@ -22,4 +22,5 @@ $(function() {
             .data("color");
         $(".gallery").css("background-color", bg);
     });
+    $(".ipadblock__ipad").slick({});
 });
