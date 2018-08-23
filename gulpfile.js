@@ -110,19 +110,6 @@ gulp.task("image:tinypng", function() {
         .pipe(tinypng(_tinifykey))
         .pipe(gulp.dest("build/img"));
 });
-gulp.task("compressionsThisMonth", function(callback) {
-    tinify.key = "aGVe6a4EnZeVnMlVaOUsImOFwDgN9oxC";
-    tinify.validate(function(err) {
-        if (err) throw err;
-        var compressionsThisMonth = tinify.compressionCount;
-        console.log("*********************************");
-        console.log("*********************************");
-        console.log("Tiny Compressions This Month = " + compressionsThisMonth);
-        console.log("*********************************");
-        console.log("*********************************");
-        callback();
-    });
-});
 
 gulp.task(
     "build",
