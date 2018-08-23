@@ -21,9 +21,11 @@
         "gulp-rename": "^1.4.0",
         "gulp-rsync": "0.0.8",
         "gulp-sass": "^4.0.1",
+        "gulp-tinypng": "^1.0.2",
         "gulp-uglify": "^3.0.1",
         "gulp-util": "^3.0.8",
         "imagemin-pngquant": "^5.1.0",
+        "tinify": "^1.6.0-beta.2",
         "vinyl-ftp": "^0.6.1"
     }
 }
